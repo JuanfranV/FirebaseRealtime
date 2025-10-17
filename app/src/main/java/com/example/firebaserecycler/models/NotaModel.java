@@ -4,18 +4,16 @@ public class NotaModel {
 
     private String id;
     private String titulo;
-    private String descripcion;
-    private String archivoUrl;
-    private String tipoArchivo;
+    private String contenido;
+    private long fecha;
 
-    public NotaModel() {} // Requerido por Firebase
+    public NotaModel() {} // Constructor vacío para Firebase
 
-    public NotaModel(String id, String titulo, String descripcion, String archivoUrl, String tipoArchivo) {
+    public NotaModel(String id, String titulo, String contenido, long fecha) {
         this.id = id;
         this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.archivoUrl = archivoUrl;
-        this.tipoArchivo = tipoArchivo;
+        this.contenido = contenido;
+        this.fecha = fecha;
     }
 
     public String getId() {
@@ -34,27 +32,19 @@ public class NotaModel {
         this.titulo = titulo;
     }
 
-    public String getArchivoUrl() {
-        return archivoUrl;
+    public String getContenido() {
+        return contenido;
     }
 
-    public void setArchivoUrl(String archivoUrl) {
-        this.archivoUrl = archivoUrl;
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public long getFecha() {
+        return fecha;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getTipoArchivo() {
-        return tipoArchivo;
-    }
-
-    public void setTipoArchivo(String tipoArchivo) {
-        this.tipoArchivo = tipoArchivo;
+    public void setFecha(long fecha) {
+        this.fecha = fecha;
     }
 }
