@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
 
             recycler = findViewById(R.id.recyclerNotas);
             recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -45,14 +46,11 @@ public class MainActivity extends AppCompatActivity {
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             ref = FirebaseDatabase.getInstance().getReference("notas").child(uid);
 
-            findViewById(R.id.btnNuevaNota).setOnClickListener(v ->
+            findViewById(R.id.btnNuevaNota).setOnClickListener(view ->
                     startActivity(new Intent(this, NuevaNotaActivity.class))
             );
 
             cargarNotas();
-
-        });
-
     }
 
     private void cargarNotas() {
